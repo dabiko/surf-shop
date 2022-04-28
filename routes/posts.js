@@ -21,12 +21,12 @@ router.get('/:id/edit',(req, res, next) => {
   res.send('EDIT /posts/:id/edit');
 });
 
-/* GET posts update /posts/:id */
+/* PUT posts update /posts/:id */
 router.put('/:id',(req, res, next) => {
   res.send('UPDATE /posts/:id');
 });
 
-/* GET posts delete /posts/:id */
+/* DELETE posts delete /posts/:id */
 router.delete('/:id',(req, res, next) => {
   res.send('DELETE /posts/:id');
 });
