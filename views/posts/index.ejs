@@ -1,0 +1,14 @@
+<h2>POST INDEX PAGE!!!</h2>
+
+<% posts.forEach(function (post) { %>
+<div>
+    <h1><%= post.title %></h1>
+    <div>Price: <%= post.price %></div>
+    <div><%= post.description %></div>
+    <div><%= post.location %></div>  
+    <div><a href="/posts/<%= post.id %>">View More</a></div>  
+</div>
+<%}); %>
+
+
+
