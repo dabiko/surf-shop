@@ -45,7 +45,10 @@ module.exports = {
         // Show post
     async postShow(req, res, next) {
       //throw new Error('This is an Error');
-        let post = await Post.findById(req.params.id);
+        let post = await Post.findById(req.params.id).populate({
+          path: 'reviews',
+          options: { sort: { '_id': -1 } }
+        });
         res.render('posts/show', { post });
       },
 

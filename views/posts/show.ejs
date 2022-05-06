@@ -21,3 +21,18 @@
 </form>
 
 
+<h3>Create a new review</h3>
+<form action="/posts/<%= post.id %>/reviews" method="POST">
+    <textarea name="review[body]" id="" cols="10" rows="5"></textarea>
+    <input type="number" name="review[rating]" min="1" max="5" step="1" required/>
+	<input type="submit" />
+</form>
+<h2>Reviews</h2>
+<% post.reviews.forEach(function(review){ %>
+<div>
+    Reviews.... : <%= review.body %>
+    Rating  : <%= review.rating %>
+</div>
+<% }); %>
+
+
