@@ -17,3 +17,9 @@ mapboxgl.accessToken = "pk.eyJ1IjoiZjhkZXYiLCJhIjoiY2wybndrNTlhMTEzZzNqbmt6YzN1c
   .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
   .setHTML('<h3>' + post.title + '</h3><p>' + post.location +'</p>'))
   .addTo(map); 
+
+// Toggle esit review form
+    $('.toggle-edit-form').on('click', function() {
+        $(this).text() === 'Edit' ? $(this).text('Cancel') : $(this).text('Edit');
+        $(this).siblings('.edit-review-form').toggle();
+   });

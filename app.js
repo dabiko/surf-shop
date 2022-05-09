@@ -22,7 +22,7 @@ const reviewsRouter = require('./routes/reviews');
 const app = express();
 
 // Connecting to the database
-mongoose.connect('mongodb://localhost:27017/surf-shop-mapbox');
+mongoose.connect('mongodb://localhost:27017/surf-shop');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
@@ -65,6 +65,11 @@ passport.deserializeUser(User.deserializeUser());
 
 //Setting the title/success messages of each page with middlware
 app.use((req, res, next) => {
+  req.user = {
+    '_id'      : '62751c4f0a0b1439352419dd',
+    'username' : 'dabiko'
+  }
+  res.locals.currentUser = req.user;
   //set page tittle
   res.locals.title = 'Surf Shop';
   //set success flash messages
