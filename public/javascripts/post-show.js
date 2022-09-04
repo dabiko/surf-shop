@@ -23,3 +23,9 @@ mapboxgl.accessToken = "pk.eyJ1IjoiZjhkZXYiLCJhIjoiY2wybndrNTlhMTEzZzNqbmt6YzN1c
         $(this).text() === 'Edit' ? $(this).text('Cancel') : $(this).text('Edit');
         $(this).siblings('.edit-review-form').toggle();
    });
+
+
+   //Clear rating field
+   $('.clear-rating').click(function() {
+     $(this).siblings('.input-no-rate').click();
+   })
